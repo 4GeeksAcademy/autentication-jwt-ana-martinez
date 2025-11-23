@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { getBackendUrl } from "../component/BackendURL";
+import { getBackendUrl } from "../helpers/backendUrl";
 
 export const Private = () => {
     const { store } = useGlobalReducer();

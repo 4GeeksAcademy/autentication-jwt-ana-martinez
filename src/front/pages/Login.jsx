@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { getBackendUrl } from "../component/BackendURL";
+import { getBackendUrl } from "../helpers/backendUrl";
 
 export const Login = () => {
     const [email, setEmail] = useState("");
@@ -58,7 +58,7 @@ export const Login = () => {
                     <div className="card">
                         <div className="card-body">
                             <h2 className="card-title text-center mb-4">Iniciar Sesión</h2>
-                            
+
                             {error && (
                                 <div className="alert alert-danger" role="alert">
                                     {error}
