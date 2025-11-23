@@ -34,7 +34,7 @@ def signup():
     if "password" not in body:
         return jsonify({"msg": "Password is required"}), 400
     
-    existing_user = User.query.filter_by(email=["email"]).first()
+    existing_user = User.query.filter_by(email=body["email"]).first()
     if existing_user:
         return jsonify({"msg": "User already exists"}), 400
     
@@ -43,7 +43,7 @@ def signup():
     new_user.set_password(body["password"])
     new_user.is_active = True
 
-    db.sesion.add(new_user)
+    db.session.add(new_user)
     db.session.commit()
 
     return jsonify({"msg": "User created successfully", "user": new_user.serialize()}), 201
