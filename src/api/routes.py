@@ -23,7 +23,7 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-@api.route('/singup', methods=['POST'])
+@api.route('/signup', methods=['POST'])
 def signup():
     body = request.get_json()
 
